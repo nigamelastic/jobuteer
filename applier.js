@@ -31,5 +31,5 @@ const puppeteer = require('puppeteer');
     await page.keyboard.press('Enter');
   
 
-  //await browser.close()
+  await browser.close()
   })()
