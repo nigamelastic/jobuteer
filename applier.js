@@ -53,8 +53,7 @@ const puppeteer = require('puppeteer');
       if (await page.$('.jobs-apply-button__text') !== null) {
         console.log("Applying to job number :  -->" + jobNo);
         jobNo++;
-
-        //await page.click('#jobs-apply-button__text');
+        await page.click('#jobs-apply-button__text');
       }
       //if().jobs-apply-button__text
     }
