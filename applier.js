@@ -7,9 +7,11 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage()
-  const email = "username";
-  const password = "password";
-  const jobNo = 1;
+  const email = "email"; //use your email address
+  const password = "password";// use your own password
+  const location = "Vienna"; //change it to any city u want
+  const keywords = "qa Automation"//u can write one or many keywords here
+  var jobNo = 1;
   //await page.screenshot({ path: 'keyboard.png' })
 
 
@@ -29,7 +31,9 @@ const puppeteer = require('puppeteer');
   await page.evaluate(function () {
     document.querySelector('input[id^="jobs-search-box-location-id"]').value = ''
   })
-  await page.type('input[id^="jobs-search-box-location-id"]', 'Vienna');
+  await page.type('input[id^="jobs-search-box-keyword-id"]',keywords);
+  await page.type('input[id^="jobs-search-box-location-id"]', location);
+ 
   await page.waitFor(2000);
   await page.keyboard.press('ArrowDown');
   await page.keyboard.press('ArrowDown');
